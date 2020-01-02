@@ -4,8 +4,8 @@ public class User {
      private int id = 0;
      private int point = 0;
      private int phone_number = 0;
-     private String username = "null";
-     private String usergender = "null";
+     private String username = null;
+     private String usergender = null;
      
     User(int key) {//»ý¼ºÀÚ.
     	id=key;

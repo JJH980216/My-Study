@@ -15,6 +15,8 @@ public class Sign {
 	    point.setUsername(sc.next());
 	    System.out.println("성별을 입력하세요 남/여 : ");
 	    point.setUsergender(sc.next());
+	    System.out.println("->고객ID는"+key+"입니다.");
+	    System.out.println();
 	    key++;
 	    
 	 }
