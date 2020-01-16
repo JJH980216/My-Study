@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+   printf("<괄호검사프로그램>\n");
+   FILE*fp=NULL;
+   char stack[50];
+   char buf[80]={'0'}; //파일한줄씩넘겨받음. 
+   int count=0;// 괄호갯수.
+   int stacknum=0; 
+   fp=fopen("./file1.txt","r");
+   if(fp==NULL){
+      printf("파일 오픈 실패");
+      return 0;
+   }
+   while(fgets(buf,sizeof(buf),fp)!=NULL){
+     printf("%s\n",buf);
+     for(int i=0; i<sizeof(buf);i++){
+        
+       if(buf[i]=='('||buf[i]=='{'||buf[i]=='['){
+          stack[stacknum++]=buf[i];
+       }
+       else if(buf[i]==')'){     
+          if(stack[--stacknum]=='('){
+             count++;   
+         } 
+       }
+       else if(buf[i]=='}'){
+            if(stack[--stacknum]=='{'){
+               count++; 
+           } 
+       }
+       else if(buf[i]==']'){
+             if(stack[--stacknum]=='[') {
+                count++; 
+            }
+       }
+      }   
+   }
+   if(stacknum==0) printf("정상적인코드입니다.\n");
+   else printf("괄호의 짝이 맞지않습니다.\n");
+   printf("괄호갯수 : %d",count);
+   fclose(fp);   
+}
