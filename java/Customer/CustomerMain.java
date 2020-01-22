@@ -15,7 +15,7 @@ public class CustomerMain {
 		while (num != 6) {
 			switch (num) {
 			case 0:
-				UserPrint up = new UserPrint();
+				Management up = new Management();
 				up.print(a);
 				ui.uiprint();
 				num = sc.nextInt();

@@ -3,7 +3,7 @@ package STUDY1;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class UserPrint {
+public class Management {
 	static int password = 12345;
 
 	void print(ArrayList<User> a) {
